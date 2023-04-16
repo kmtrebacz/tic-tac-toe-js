@@ -1,0 +1,33 @@
+a{
+     text-decoration: none;
+     color: #000000;
+}
+.card-img-top{
+     padding: 24px;
+     transition: 0.3s;
+}
+.card:hover .card-img-top{
+     padding: 20px;
+}
+.back-button, .back-button img{
+     width: 40px;
+}
+.back-button{
+     position: absolute;
+     top: 15px; 
+     left: 15px;
+}
+#gameboard{
+     width: 500px;
+     aspect-ratio: 1;
+}
+.square{
+     width: 33%;
+     aspect-ratio: 1;
+     border: 2px solid #000;
+}
+.h-20p{height: 20%;}
+.h-25p{height: 25%;}
+.h-75p{height: 75%;}
+.h-100p{height: 100%;}
+.h-100v{height: 100vh;}
