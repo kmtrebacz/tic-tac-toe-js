@@ -1,15 +1,21 @@
 const gameBoard = document.querySelector('#gameboard')
 const infoDisplay = document.querySelector('#info')
-const startCells = ["", "", "", "", "", "", "", "", ""]
+const cells = document.querySelectorAll('.square')
+const xCells = ["", "", "", "", "", "", "", "", ""]
+const oCells = ["", "", "", "", "", "", "", "", ""]
+let currentTurn = 'x'
 
-function createBoard() {
-  startCells.forEach((_cell, index) => {
-    const cellElement= document.createElement('div')
-    cellElement.classList.add('square')
-    cellElement.classList.add('col-4')
-    cellElement.id = index
-    gameBoard.append(cellElement)
-  })
-}
+console.log(cells)
 
-createBoard()
+cells.forEach(cell => {
+     cell.addEventListener('click', () => {
+          console.log(cell.id)
+          console.log(currentTurn)
+          switch (currentTurn){
+               case 'x': currentTurn = 'o' 
+                    break
+               case 'o': currentTurn = 'x'
+                    break
+          }
+     })
+})
