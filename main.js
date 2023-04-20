@@ -15,22 +15,29 @@ const winningSequences = [
 const xCells = []
 const oCells = []
 let currentTurn = 'x'
+let allTaken = false
 
 console.log(cells)
 
 cells.forEach(cell => {
-     cell.addEventListener('click', () => {
-          console.log(cell.id)
-          console.log(currentTurn)
-          switch (currentTurn){
-            case 'x': 
-              updateCellsIndex(cell.id, 'x')
-              break
-            case 'o': 
-              updateCellsIndex(cell.id, 'o')
-              break
-          }
-     })
+  cell.addEventListener('click', () => {
+    if (!allTaken){     
+      console.log(cell.id)
+      console.log(currentTurn)
+      switch (currentTurn){
+        case 'x': 
+          updateCellsIndex(cell.id, 'x')
+          checkFull()
+          break
+        case 'o': 
+          updateCellsIndex(cell.id, 'o')
+          checkFull()
+          break
+      }
+    } else {
+      checkFull()
+    }
+  })
 })
 
 function updateCellsIndex(id, currentPlayer) {
@@ -49,6 +56,13 @@ function updateCellsIndex(id, currentPlayer) {
     printCell(id, currentPlayer)
   } else {
     alert('Cell is already choosed')
+  }
+}
+
+function checkFull() {
+  if (!cellsIndex.includes("")) {
+    alert("All cells were taken")
+    allTaken = true
   }
 }
 
