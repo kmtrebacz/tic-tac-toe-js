@@ -65,6 +65,11 @@ function updateCellsIndex(id, currentPlayer) {
     checkFull()
   } else {
     alert('Cell is already choosed')
+    if (currentPlayer == 'x'){
+      currentPlayer = 'o'
+    } else {
+      currentPlayer = 'x'
+    }
   }
 }
 
