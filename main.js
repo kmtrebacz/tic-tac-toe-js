@@ -45,18 +45,54 @@ function updateCellsIndex(id, currentPlayer) {
     cellsIndex[id] = currentPlayer
     if (currentPlayer == 'x'){
       xCells.push(id)
+      if (checkWin()) {
+        allTaken = true
+        return
+      }
       currentTurn = 'o'
     } else {
       oCells.push(id)
+      if (checkWin()) {
+        allTaken = true
+        return
+      }
       currentTurn = 'x'
     }
     console.log(cellsIndex)
     console.log(xCells)
     console.log(oCells)
     printCell(id, currentPlayer)
+    checkFull()
   } else {
     alert('Cell is already choosed')
   }
+}
+
+function checkWin() {
+  for (let i = 0; i < winningSequences.length; i++){
+    const sequence = winningSequences[i]
+    let xCount = 0
+    let oCount = 0
+    for (let j = 0; j < sequence.length; j++){
+      const cellIndex = sequence[j]
+      if (xCells.includes(cellIndex.toString())){
+        xCount++
+        if (xCount === 3){
+          alert("X wins!")
+          location.reload()
+          return true
+        }
+      } else if (oCells.includes(cellIndex.toString())){
+        oCount++
+        if (oCount === 3){
+          alert("O wins!")
+          location.reload()
+          return true
+        }
+      }
+    }
+  }
+  return false
 }
 
 function checkFull() {
