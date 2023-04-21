@@ -58,7 +58,7 @@ function updateCellsIndex(id, currentPlayer) {
       }
       currentTurn = 'x'
     }
-    console.log(cellsIndex)
+    console.log(cellsIndex)+
     console.log(xCells)
     console.log(oCells)
     printCell(id, currentPlayer)
