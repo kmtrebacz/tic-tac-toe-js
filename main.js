@@ -27,15 +27,17 @@ cells.forEach(cell => {
       switch (currentTurn){
         case 'x': 
           updateCellsIndex(cell.id, 'x')
-          checkFull()
+          if (allTaken === false){
+               checkFull()
+          }
           break
         case 'o': 
           updateCellsIndex(cell.id, 'o')
-          checkFull()
+          if (allTaken === false){
+               checkFull()
+          }
           break
       }
-    } else {
-      checkFull()
     }
   })
 })
@@ -58,18 +60,11 @@ function updateCellsIndex(id, currentPlayer) {
       }
       currentTurn = 'x'
     }
-    console.log(cellsIndex)+
+    console.log(cellsIndex)
     console.log(xCells)
     console.log(oCells)
     printCell(id, currentPlayer)
     checkFull()
-  } else {
-    alert('Cell is already choosed')
-    if (currentPlayer == 'x'){
-      currentPlayer = 'o'
-    } else {
-      currentPlayer = 'x'
-    }
   }
 }
 
@@ -102,8 +97,10 @@ function checkWin() {
 
 function checkFull() {
   if (!cellsIndex.includes("")) {
-    alert("All cells were taken")
-    allTaken = true
+    if(confirm('All cells were taken. Click OK to restart game')){
+      window.location.reload()
+      allTaken = true
+    }
   }
 }
 
