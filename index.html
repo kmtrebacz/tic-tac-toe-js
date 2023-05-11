@@ -7,23 +7,30 @@
      <title>Two Players - Tic Tac Toe</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
      <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
      <main class="h-100v container justify-content-center d-flex align-items-center">
-          <div id="gameboard">
-               <div class="square" id="0"></div>
-               <div class="square" id="1"></div>
-               <div class="square" id="2"></div>
-               <div class="square" id="3"></div>
-               <div class="square" id="4"></div>
-               <div class="square" id="5"></div>
-               <div class="square" id="6"></div>
-               <div class="square" id="7"></div>
-               <div class="square" id="8"></div>
-          </div>
+          <section>
+               <div id="stats" class="col-12 text-center pb-5">
+                    <span id="x-stats" class="display-6"></span><br>
+                    <span id="o-stats" class="display-6"></span>
+               </div>
+               <div id="gameboard" class="col-12">
+                    <div class="square" id="0"></div>
+                    <div class="square" id="1"></div>
+                    <div class="square" id="2"></div>
+                    <div class="square" id="3"></div>
+                    <div class="square" id="4"></div>
+                    <div class="square" id="5"></div>
+                    <div class="square" id="6"></div>
+                    <div class="square" id="7"></div>
+                    <div class="square" id="8"></div>
+               </div>
+          </section>
      </main>
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
